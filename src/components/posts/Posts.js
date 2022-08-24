@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Post from './post/post';
 import useStyle from './styles';
 import { Button, CircularProgress, Grid } from '@material-ui/core';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getPosts } from '../../actions/Posts';
 const Posts = ({ setUpdateId }) => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getPosts(1));
+  }, []);
   const classes = useStyle();
   const { posts, isLoading } = useSelector((state) => state.posts);
   if (!posts?.length && !isLoading)
