@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Posts = ({ setUpdateId }) => {
   const classes = useStyle();
   const { posts, isLoading } = useSelector((state) => state.posts);
-  if (!posts.length && !isLoading)
+  if (!posts?.length && !isLoading)
     return (
       <div>
         <h1>No Memories found</h1>
