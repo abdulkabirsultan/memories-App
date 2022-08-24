@@ -16,7 +16,10 @@ const SharedLayout = () => {
             &hearts;
           </span>{' '}
           by&nbsp;
-          <Link to='' style={{ textDecoration: 'none' }}>
+          <Link
+            to='https://github.com/Sultkid/memories-App'
+            style={{ textDecoration: 'none' }}
+          >
             <strong>Abdulkabir Sultan</strong>
           </Link>
         </Typography>
