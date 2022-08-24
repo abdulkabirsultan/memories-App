@@ -1,6 +1,6 @@
 import { Container, Typography } from '@material-ui/core';
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 
 const SharedLayout = () => {
@@ -16,12 +16,14 @@ const SharedLayout = () => {
             &hearts;
           </span>{' '}
           by&nbsp;
-          <Link
-            to='https://github.com/Sultkid/memories-App'
+          <a
+            href='https://github.com/Sultkid/memories-App'
+            target='_blank'
+            rel='noreferrer'
             style={{ textDecoration: 'none' }}
           >
             <strong>Abdulkabir Sultan</strong>
-          </Link>
+          </a>
         </Typography>
       </footer>
     </Container>
