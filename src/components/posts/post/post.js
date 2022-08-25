@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Card,
   CardActions,
@@ -123,8 +123,7 @@ const Post = ({ post, setUpdateId }) => {
         >
           <Like />
         </Button>
-        {/* {(user?.result?.sub === post.createdBy ||
-          user?.result?._id === post.createdBy) && ( */}
+
         {verifyUser === post.createdBy && (
           <Button
             size='small'
