@@ -6,6 +6,7 @@ import {
   Grid,
   Button,
   Paper,
+  Divider,
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { useGoogleLogin /* GoogleLogin */ } from '@react-oauth/google';
@@ -82,6 +83,28 @@ const Auth = () => {
         </Avatar>
         <Typography variant='h5'>{isSignup ? 'Sign Up' : 'Sign In'}</Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
+          {
+            <Button
+              className={classes.googleButton}
+              fullWidth
+              variant='contained'
+              color='primary'
+              onClick={login}
+              startIcon={<Icon />}
+            >
+              Google sign in{' '}
+            </Button>
+          }
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Divider style={{ width: '45%' }} variant='fullWidth' /> <h3>or</h3>{' '}
+            <Divider style={{ width: '45%' }} />
+          </div>
           <Grid container spacing={2}>
             {isSignup && (
               <>
@@ -90,7 +113,6 @@ const Auth = () => {
                   label='First Name'
                   handleChange={handleChange}
                   half
-                  autoFocus
                 ></Input>
                 <Input
                   name='lastName'
@@ -132,30 +154,6 @@ const Auth = () => {
           >
             {isSignup ? 'Sign Up' : 'Sign In'}
           </Button>
-          {
-            <Button
-              className={classes.googleButton}
-              fullWidth
-              variant='contained'
-              color='primary'
-              onClick={login}
-              startIcon={<Icon />}
-            >
-              Google sign in{' '}
-            </Button>
-          }
-
-          {/* <GoogleLogin
-              onSuccess={onSuccess}
-              onError={onError}
-              auto_select
-              useOneTap
-              width='400'
-              size='large'
-              shape='rectangular'
-              theme='filled_blue'
-              logo_alignment='left'
-            /> */}
 
           <Grid container justifyContent='center'>
             <Grid item>
@@ -176,21 +174,5 @@ const Auth = () => {
     </Container>
   );
 };
-// client id:   935621686965-dquni885cbdqohkskc3s06egkhg67m9u.apps.googleusercontent.com
-// client secret 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
-export default Auth;
 
-/* aud: '935621686965-dquni885cbdqohkskc3s06egkhg67m9u.apps.googleusercontent.com';
-azp: '935621686965-dquni885cbdqohkskc3s06egkhg67m9u.apps.googleusercontent.com';
-email: 'abdulkabirsultan@gmail.com';
-email_verified: true;
-exp: 1660645477;
-family_name: 'Sultan';
-given_name: 'Abdulkabir';
-iat: 1660641877;
-iss: 'https://accounts.google.com';
-jti: 'c6b6f068186acd060cead865a2c7374ae7fd1d9f';
-name: 'Abdulkabir Sultan';
-nbf: 1660641577;
-picture: 'https://lh3.googleusercontent.com/a/AItbvmmdxC97vtCFvDqB7o0fs2FEkPSa-lF6VBc826nL=s96-c';
-sub: '118075691184063234015'; */
+export default Auth;
