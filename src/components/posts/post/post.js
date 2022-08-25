@@ -95,7 +95,7 @@ const Post = ({ post, setUpdateId }) => {
         </div>
         <div className={classes.details}>
           <Typography variant='body2' color='textSecondary'>
-            {post.tags.map((tag) => `#${tag} `)}
+            {post.tags.map((tag) => `${tag && '#'}${tag} `)}
           </Typography>
         </div>
         <Typography className={classes.title} variant='h5'>
