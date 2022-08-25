@@ -105,7 +105,9 @@ const Post = ({ post, setUpdateId }) => {
           <Typography variant='body2' color='textSecondary' component={'p'}>
             {post.message.substring(0, 80)}
             {post.message.length >= 80 && (
-              <span style={{ color: 'blue' }}>... Read more</span>
+              <>
+                ...<span style={{ color: 'blue' }}> Read more</span>
+              </>
             )}
           </Typography>
         </CardContent>

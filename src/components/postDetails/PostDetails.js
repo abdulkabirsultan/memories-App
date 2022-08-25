@@ -101,7 +101,12 @@ const PostDetails = () => {
                         {creator}
                       </Typography>
                       <Typography gutterButtom variant='subtitle2'>
-                        {message}
+                        {message.substring(0, 80)}
+                        {message.length >= 80 && (
+                          <>
+                            ...<span style={{ color: 'blue' }}> Read more</span>
+                          </>
+                        )}
                       </Typography>
                       <Typography gutterButtom variant='subtitle1'>
                         Likes: {likeCount.length}
