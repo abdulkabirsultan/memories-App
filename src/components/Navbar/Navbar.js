@@ -17,6 +17,7 @@ const Navbar = () => {
     dispatch({ type: LOGOUT });
     navigate('/');
     setUser(null);
+    window.location.reload();
   };
   useEffect(() => {
     if (!token?.startsWith('eyJ')) {
