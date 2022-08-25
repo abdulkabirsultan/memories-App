@@ -81,37 +81,39 @@ const PostDetails = () => {
         </div>
       </div>
       {recomendedPost.length > 0 && (
-        <div className={classes.section}>
-          <Typography variant='h5'>You might also Like:</Typography>
-          <Divider />
-          <div className={classes.recommendedPosts}>
-            {recomendedPost.map(
-              ({ _id, title, message, likeCount, creator, selectedFile }) => {
-                return (
-                  <div
-                    style={{ margin: '20px', cursor: 'pointer' }}
-                    onClick={() => openPost(_id)}
-                    key={_id}
-                  >
-                    <Typography gutterButtom variant='h6'>
-                      {title}
-                    </Typography>
-                    <Typography gutterButtom variant='subtitle2'>
-                      {creator}
-                    </Typography>
-                    <Typography gutterButtom variant='subtitle2'>
-                      {message}
-                    </Typography>
-                    <Typography gutterButtom variant='subtitle1'>
-                      Likes: {likeCount.length}
-                    </Typography>
-                    <img src={selectedFile} alt={title} width='200px' />
-                  </div>
-                );
-              }
-            )}
+        <section className={classes.section2}>
+          <div className={classes.section}>
+            <Typography variant='h5'>You might also Like:</Typography>
+            <Divider />
+            <div className={classes.recommendedPosts}>
+              {recomendedPost.map(
+                ({ _id, title, message, likeCount, creator, selectedFile }) => {
+                  return (
+                    <div
+                      style={{ margin: '20px', cursor: 'pointer' }}
+                      onClick={() => openPost(_id)}
+                      key={_id}
+                    >
+                      <Typography gutterButtom variant='h6'>
+                        {title}
+                      </Typography>
+                      <Typography gutterButtom variant='subtitle2'>
+                        {creator}
+                      </Typography>
+                      <Typography gutterButtom variant='subtitle2'>
+                        {message}
+                      </Typography>
+                      <Typography gutterButtom variant='subtitle1'>
+                        Likes: {likeCount.length}
+                      </Typography>
+                      <img src={selectedFile} alt={title} width='200px' />
+                    </div>
+                  );
+                }
+              )}
+            </div>
           </div>
-        </div>
+        </section>
       )}
       <Link to='/'>
         <Button variant='contained' color='primary'>

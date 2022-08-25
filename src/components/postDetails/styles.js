@@ -20,6 +20,11 @@ export default makeStyles((theme) => ({
     margin: '10px',
     flex: 1.2,
   },
+  section2: {
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5.5rem',
+    },
+  },
   imageSection: {
     marginLeft: '20px',
     flex: 1,
@@ -44,11 +49,17 @@ export default makeStyles((theme) => ({
   commentsOuterContainer: {
     display: 'flex',
     justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
   },
   commentsInnerContainer: {
     height: '200px',
     overflowY: 'auto',
     marginRight: '30px',
+    [theme.breakpoints.down('sm')]: {
+      marginRight: 0,
+    },
     width: '50%',
   },
 }));
